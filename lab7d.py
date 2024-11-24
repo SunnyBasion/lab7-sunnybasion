@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
-# Student ID: [seneca_id] 
+# Student ID: mbasion | 107827172
 class Time:
-    """Simple object type for time of the day.
-        data attributes: hour, minute, second
-        function attributes: __init__, __str__, __repr__
-                            time_to_sec, format_time,
-                            change_time, sum_time
+    """Simple object type for time of the day. data attributes: hour, minute, second
+    function attributes: __init__, __str__, __repr__time_to_sec, format_time,change_time, sum_time
     """
     def __init__(self,hour=12,minute=0,second=0):
         """constructor for time object""" 
@@ -31,15 +28,13 @@ class Time:
         return None
 
     def time_to_sec(self):
-        '''convert a time object to a single integer representing the 
-        number of seconds from mid-night'''
+        '''convert a time object to a single integer representing the number of seconds from mid-night'''
         minutes = self.hour * 60 + self.minute
         seconds = minutes * 60 + self.second
         return seconds
 
     def valid_time(self):
-        """check for the validity of the time object attributes:
-        24 > hour > 0, 60 > minute > 0, 60 > second > 0 """
+        """check for the validity of the time object attributes: 24 > hour > 0, 60 > minute > 0, 60 > second > 0 """
         if self.hour < 0 or self.minute < 0 or self.second < 0:
             return False
         if self.minute >= 60 or self.second >= 60 or self.hour >= 24:
@@ -47,8 +42,7 @@ class Time:
         return True
 
 def sec_to_time(seconds):
-    '''convert a given number of seconds to a time object in 
-        hour, minute, second format'''
+    '''convert a given number of seconds to a time object in hour, minute, second format'''
     time = Time()
     minutes, time.second = divmod(seconds, 60)
     time.hour, time.minute = divmod(minutes, 60)
